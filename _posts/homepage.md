@@ -9,7 +9,6 @@ Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur puru
 
 ### Projects & Publications
 <div class="publication-list">
-
   <div class="publication">
     <div class="pub-image">
       <img src="public/hckh.png" alt="HC Knowledge Hub Homelogo">
