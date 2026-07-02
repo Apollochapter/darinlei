@@ -114,68 +114,54 @@ a.sidebar-nav-item:focus {
   }
 }
 
-/* Container for the whole list */
+/* 1. The master container */
 .publication-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Space between different publications */
 }
 
-/* Individual publication block */
+/* 2. Individual publication layout */
 .publication {
   display: flex;
-  gap: 1.5rem; /* Space between image and text */
   align-items: flex-start;
+  margin-bottom: 4rem; /* Massive vertical breathing room between projects */
 }
 
-/* The image container */
+/* 3. The image column */
 .pub-image {
-  flex-shrink: 0; /* Prevents the image from being squished */
-  width: 200px;
+  flex: 0 0 220px; /* Forces the image to stay exactly 220px wide */
+  margin-right: 2rem; /* Forces a wide horizontal gap between image and text */
 }
 
 .pub-image img {
   width: 100%;
   height: auto;
-  border-radius: 4px; /* Optional: slightly rounds the corners */
-  object-fit: cover;
+  border-radius: 8px; /* Slightly rounds the image corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds a subtle professional shadow */
 }
 
-/* Mobile Responsive: Stacks image on top of text on small screens */
-@media (max-width: 600px) {
+/* 4. The text column */
+.pub-content {
+  flex: 1; /* Tells the text to smoothly fill the remaining space */
+}
+
+/* 5. Fixes the title alignment */
+.pub-content p:first-child {
+  margin-top: 0; /* Forces the title to align perfectly with the top of the image */
+}
+
+/* 6. Mobile Responsive Code */
+@media (max-width: 768px) {
   .publication {
     flex-direction: column;
   }
   .pub-image {
-    width: 100%; 
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    flex: 0 0 auto;
+    width: 100%;
   }
 }
-
-/*
- * Reverse layout
- *
- * Flip the orientation of the page by placing the `.sidebar` on the right.
- */
-
-@media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .layout-reverse .content {
-    margin-left: 4rem;
-    margin-right: 22rem;
-  }
-}
-
-
 
 /*
  * Themes
